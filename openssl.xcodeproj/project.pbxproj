@@ -21,6 +21,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
+		53DD39F512A89020008A5727 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9069D12F0FCE340B0042E34C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9069D13C0FCE35730042E34C;
+			remoteInfo = make;
+		};
 		9069D2920FCE65A70042E34C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9069D12F0FCE340B0042E34C /* Project object */;
@@ -31,10 +38,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53DD39FA12A89020008A5727 /* libssl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libssl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9069D28C0FCE659A0042E34C /* libcrypto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcrypto.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		53DD39F612A89020008A5727 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9069D28A0FCE659A0042E34C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				9069D28C0FCE659A0042E34C /* libcrypto.a */,
+				53DD39FA12A89020008A5727 /* libssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +79,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		53DD39F312A89020008A5727 /* ssl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53DD39F712A89020008A5727 /* Build configuration list for PBXNativeTarget "ssl" */;
+			buildPhases = (
+				53DD39F612A89020008A5727 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53DD39F412A89020008A5727 /* PBXTargetDependency */,
+			);
+			name = ssl;
+			productName = crypto;
+			productReference = 53DD39FA12A89020008A5727 /* libssl.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		9069D28B0FCE659A0042E34C /* crypto */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9069D2980FCE65C10042E34C /* Build configuration list for PBXNativeTarget "crypto" */;
@@ -86,13 +118,21 @@
 			isa = PBXProject;
 			buildConfigurationList = 9069D1320FCE340B0042E34C /* Build configuration list for PBXProject "openssl" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 9069D12D0FCE340B0042E34C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9069D13C0FCE35730042E34C /* make */,
 				9069D28B0FCE659A0042E34C /* crypto */,
+				53DD39F312A89020008A5727 /* ssl */,
 			);
 		};
 /* End PBXProject section */
@@ -107,6 +147,7 @@
 				"$(SRCROOT)/Makefile",
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/libssl.a",
 				"$(BUILT_PRODUCTS_DIR)/libcrypto.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +157,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		53DD39F412A89020008A5727 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9069D13C0FCE35730042E34C /* make */;
+			targetProxy = 53DD39F512A89020008A5727 /* PBXContainerItemProxy */;
+		};
 		9069D2930FCE65A70042E34C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9069D13C0FCE35730042E34C /* make */;
@@ -124,6 +170,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		53DD39F812A89020008A5727 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = ssl;
+			};
+			name = Debug;
+		};
+		53DD39F912A89020008A5727 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = ssl;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		9069D1300FCE340B0042E34C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -192,6 +268,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		53DD39F712A89020008A5727 /* Build configuration list for PBXNativeTarget "ssl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53DD39F812A89020008A5727 /* Debug */,
+				53DD39F912A89020008A5727 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9069D1320FCE340B0042E34C /* Build configuration list for PBXProject "openssl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
